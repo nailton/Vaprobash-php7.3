@@ -33,7 +33,7 @@ else
     sudo apt-key update
     sudo apt-get update
 
-    sudo apt-get install -qq php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-pgsql php7.3-sqlite php7.3-curl php7.3-gd php7.3-intl php7.3-mbstring php7.3-xml php7.3-mcrypt
+    sudo apt-get install -qq php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-pgsql php7.3-sqlite3 php7.3-curl php7.3-gd php7.3-intl php7.3-mbstring php7.3-xml
 
     # Set PHP FPM to listen on TCP instead of Socket
     sudo sed -i "s/listen =.*/listen = 127.0.0.1:9000/" /etc/php/7.3/fpm/pool.d/www.conf
