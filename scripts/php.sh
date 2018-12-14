@@ -32,23 +32,23 @@ else
     sudo add-apt-repository -y ppa:ondrej/php
     sudo apt-key update
     sudo apt-get update
-    
-    sudo apt-get install -qq php7.0 php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl php7.0-gd php7.0-intl php7.0-mbstring php7.0-xml php7.0-mcrypt
+
+    sudo apt-get install -qq php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-pgsql php7.3-sqlite php7.3-curl php7.3-gd php7.3-intl php7.3-mbstring php7.3-xml php7.3-mcrypt
 
     # Set PHP FPM to listen on TCP instead of Socket
-    sudo sed -i "s/listen =.*/listen = 127.0.0.1:9000/" /etc/php/7.0/fpm/pool.d/www.conf
+    sudo sed -i "s/listen =.*/listen = 127.0.0.1:9000/" /etc/php/7.3/fpm/pool.d/www.conf
 
     # Set PHP FPM allowed clients IP address
-    sudo sed -i "s/;listen.allowed_clients/listen.allowed_clients/" /etc/php/7.0/fpm/pool.d/www.conf
+    sudo sed -i "s/;listen.allowed_clients/listen.allowed_clients/" /etc/php/7.3/fpm/pool.d/www.conf
 
-    # Set run-as user for PHP/7.0-FPM processes to user/group "vagrant"
+    # Set run-as user for PHP/7.3-FPM processes to user/group "vagrant"
     # to avoid permission errors from apps writing to files
-    sudo sed -i "s/user = www-data/user = vagrant/" /etc/php/7.0/fpm/pool.d/www.conf
-    sudo sed -i "s/group = www-data/group = vagrant/" /etc/php/7.0/fpm/pool.d/www.conf
+    sudo sed -i "s/user = www-data/user = vagrant/" /etc/php/7.3/fpm/pool.d/www.conf
+    sudo sed -i "s/group = www-data/group = vagrant/" /etc/php/7.3/fpm/pool.d/www.conf
 
-    sudo sed -i "s/listen\.owner.*/listen.owner = vagrant/" /etc/php/7.0/fpm/pool.d/www.conf
-    sudo sed -i "s/listen\.group.*/listen.group = vagrant/" /etc/php/7.0/fpm/pool.d/www.conf
-    sudo sed -i "s/listen\.mode.*/listen.mode = 0666/" /etc/php/7.0/fpm/pool.d/www.conf
+    sudo sed -i "s/listen\.owner.*/listen.owner = vagrant/" /etc/php/7.3/fpm/pool.d/www.conf
+    sudo sed -i "s/listen\.group.*/listen.group = vagrant/" /etc/php/7.3/fpm/pool.d/www.conf
+    sudo sed -i "s/listen\.mode.*/listen.mode = 0666/" /etc/php/7.3/fpm/pool.d/www.conf
 
-    sudo service php7.0-fpm restart
+    sudo service php7.3-fpm restart
 fi
