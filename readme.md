@@ -31,10 +31,10 @@ Some further assumptions and self-imposed restrictions. If you find yourself nee
 
 ```bash
 # curl
-$ curl -L https://raw.githubusercontent.com/mikaelmattsson/Vaprobash-php7.0/master/Vagrantfile > Vagrantfile
+$ curl -L https://raw.githubusercontent.com/nailton/Vaprobash-php7.3/master/Vagrantfile > Vagrantfile
 
 # wget
-$ wget -O Vagrantfile https://raw.githubusercontent.com/mikaelmattsson/Vaprobash-php7.0/master/Vagrantfile
+$ wget -O Vagrantfile https://raw.githubusercontent.com/nailton/Vaprobash-php7.3/master/Vagrantfile
 ```
 
 **Second**, edit the `Vagrantfile` and uncomment which scripts you'd like to run. You can uncomment them by removing the `#` character before the `config.vm.provision` line.

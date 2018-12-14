@@ -10,7 +10,7 @@ sudo update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
 echo ">>> Installing Base Packages"
 
 if [[ -z $1 ]]; then
-    github_url="https://raw.githubusercontent.com/mikaelmattsson/Vaprobash/master"
+    github_url="https://raw.githubusercontent.com/nailton/Vaprobash-php7.3/master"
 else
     github_url="$1"
 fi

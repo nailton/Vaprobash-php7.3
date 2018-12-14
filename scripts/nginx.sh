@@ -29,7 +29,7 @@ else
 fi
 
 if [[ -z $4 ]]; then
-    github_url="https://raw.githubusercontent.com/mikaelmattsson/Vaprobash/master"
+    github_url="https://raw.githubusercontent.com/nailton/Vaprobash-php7.3/master"
 else
     github_url="$4"
 fi
@@ -70,9 +70,9 @@ sudo ngxdis default
 
 if [[ $HHVM_IS_INSTALLED -ne 0 && $PHP_IS_INSTALLED -eq 0 ]]; then
     # PHP-FPM Config for Nginx
-    sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.0/fpm/php.ini
+    sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.3/fpm/php.ini
 
-    sudo service php7.0-fpm restart
+    sudo service php7.3-fpm restart
 fi
 
 sudo service nginx restart

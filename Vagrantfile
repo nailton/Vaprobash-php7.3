@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 # Config Github Settings
-github_username = "mikaelmattsson"
-github_repo     = "Vaprobash-php7.0"
+github_username = "nailton"
+github_repo     = "Vaprobash-php7.3"
 github_branch   = "master"
 github_url      = "https://raw.githubusercontent.com/#{github_username}/#{github_repo}/#{github_branch}"
 
@@ -42,7 +42,7 @@ mongo_enable_remote   = "false"  # remote access enabled when true
 
 # Languages and Packages
 php_timezone          = "UTC"    # http://php.net/manual/en/timezones.php
-php_version           = "7.0"    # Options: 7.0
+php_version           = "7.3"    # Options: 7.3
 ruby_version          = "latest" # Choose what ruby version should be installed (will also be the default version)
 ruby_gems             = [        # List any Ruby Gems that you want to install
   #"jekyll",

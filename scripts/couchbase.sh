@@ -18,7 +18,7 @@ PHP_IS_INSTALLED=$?
 dpkg -s php-pear
 PEAR_IS_INSTALLED=$?
 
-dpkg -s php7.0-dev
+dpkg -s php7.3-dev
 PHPDEV_IS_INSTALLED=$?
 
 if [ ${PHP_IS_INSTALLED} -eq 0 ]; then
@@ -28,7 +28,7 @@ if [ ${PHP_IS_INSTALLED} -eq 0 ]; then
     fi
 
     if [ ${PHPDEV_IS_INSTALLED} -eq 1 ]; then
-        sudo apt-get -qq install php7.0-dev
+        sudo apt-get -qq install php7.3-dev
     fi
 
     sudo wget --quiet -O/etc/apt/sources.list.d/couchbase.list http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list
@@ -37,11 +37,11 @@ if [ ${PHP_IS_INSTALLED} -eq 0 ]; then
     sudo apt-get -qq install libcouchbase2-libevent libcouchbase-dev
 
     sudo pecl install couchbase-1.2.2
-    sudo cat > /etc/php/7.0/mods-available/couchbase.ini << EOF
+    sudo cat > /etc/php/7.3/mods-available/couchbase.ini << EOF
 ; configuration for php couchbase module
 ; priority=30
 extension=couchbase.so
 EOF
     sudo phpenmod couchbase
-    sudo service php7.0-fpm restart
+    sudo service php7.3-fpm restart
 fi
