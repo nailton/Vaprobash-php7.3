@@ -33,7 +33,7 @@ PHP_IS_INSTALLED=$?
 
 if [ $PHP_IS_INSTALLED -eq 0 ]; then
     # install dependencies
-    sudo apt-get -y install php-pear php7.0-dev
+    sudo apt-get -y install php-pear php7.3-dev
 
     # install php extension
     echo "no" > answers.txt
@@ -41,9 +41,9 @@ if [ $PHP_IS_INSTALLED -eq 0 ]; then
     rm answers.txt
 
     # add extension file and restart service
-    echo 'extension=mongo.so' | sudo tee /etc/php/7.0/mods-available/mongo.ini
+    echo 'extension=mongo.so' | sudo tee /etc/php/7.3/mods-available/mongo.ini
 
-    ln -s /etc/php/7.0/mods-available/mongo.ini /etc/php/7.0/fpm/conf.d/mongo.ini
-    ln -s /etc/php/7.0/mods-available/mongo.ini /etc/php/7.0/cli/conf.d/mongo.ini
-    sudo service php7.0-fpm restart
+    ln -s /etc/php/7.3/mods-available/mongo.ini /etc/php/7.3/fpm/conf.d/mongo.ini
+    ln -s /etc/php/7.3/mods-available/mongo.ini /etc/php/7.3/cli/conf.d/mongo.ini
+    sudo service php7.3-fpm restart
 fi

@@ -22,7 +22,7 @@ else
 fi
 
 if [[ -z $4 ]]; then
-    github_url="https://raw.githubusercontent.com/mikaelmattsson/Vaprobash/master"
+    github_url="https://raw.githubusercontent.com/nailton/Vaprobash-php7.3/master"
 else
     github_url="$4"
 fi
@@ -49,7 +49,7 @@ sudo usermod -a -G www-data vagrant
 # On separate lines since some may cause an error
 # if not installed
 sudo a2dismod mpm_prefork mpm_worker
-sudo a2dismod php7.0
+sudo a2dismod php7.3
 sudo a2enmod rewrite actions ssl
 curl --silent -L $github_url/helpers/vhost.sh > vhost
 sudo chmod guo+x vhost
